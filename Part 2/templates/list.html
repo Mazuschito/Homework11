@@ -1,0 +1,17 @@
+<h1>Все кандидаты</h1>
+
+{% for candidate in candidates %}
+    <p><a href="/candidate/{{candidate.name}}">{{ candidate.name }}</a></p>
+{% endfor %}
+<br/>
+<h2>Поиск по имени:</h2>
+<form action="/search/">
+    <input type="text" name="name_search"><br>
+    <input type="Submit" value="Search"><br>
+</form>
+<br/>
+<h2>Поиск по навыку:</h2>
+<form action="/skill/">
+    <input type="text" name="skill_search"><br>
+    <input type="Submit" value="Search"><br>
+</form>
