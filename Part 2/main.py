@@ -10,7 +10,7 @@ def main_page():
     return render_template("list.html", candidates=candidates)
 
 
-@app.route("/candidate/<name>")
+@app.route("/candidate/<name>/")
 def candidate(name):
     candidate = get_candidate_by_name(name)
     return render_template("single.html", candidate=candidate)
@@ -32,4 +32,5 @@ def skill():
     return render_template("skill.html", candidates=candidates, qty_of_candidates=qty_of_candidates, skill=skill)
 
 
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
